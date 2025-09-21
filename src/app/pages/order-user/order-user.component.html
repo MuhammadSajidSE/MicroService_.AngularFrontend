@@ -1,0 +1,19 @@
+<div class="container mt-4">
+  <h3>Users From Gateway</h3>
+  <table class="table table-bordered table-striped mt-3">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.password }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

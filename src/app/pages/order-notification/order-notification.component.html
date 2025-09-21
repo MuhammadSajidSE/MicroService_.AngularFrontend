@@ -1,0 +1,23 @@
+<div class="container mt-4">
+  <h3>Add Notification</h3>
+
+  <form [formGroup]="notificationForm" (ngSubmit)="submitNotification()">
+    <div class="mb-3">
+      <label class="form-label">Title</label>
+      <input type="text" class="form-control" formControlName="title" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Description</label>
+      <textarea class="form-control" formControlName="description"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="notificationForm.invalid">
+      Add Notification
+    </button>
+  </form>
+
+  <div class="mt-3" *ngIf="message">
+    {{ message }}
+  </div>
+</div>

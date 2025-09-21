@@ -1,0 +1,38 @@
+<div class="container mt-4">
+  <h2 class="mb-3">User Management</h2>
+
+  <!-- Form -->
+  <form (ngSubmit)="addUser()" #userForm="ngForm" class="mb-4">
+    <div class="form-group mb-2">
+      <input type="text" [(ngModel)]="newUser.name" name="name" placeholder="Name"
+             class="form-control" required>
+    </div>
+    <div class="form-group mb-2">
+      <input type="email" [(ngModel)]="newUser.email" name="email" placeholder="Email"
+             class="form-control" required>
+    </div>
+    <div class="form-group mb-2">
+      <input type="password" [(ngModel)]="newUser.password" name="password" placeholder="Password"
+             class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add User</button>
+  </form>
+
+  <!-- Table -->
+  <table class="table table-bordered table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of users">
+        <td>{{ u.name }}</td>
+        <td>{{ u.email }}</td>
+        <td>{{ u.password }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,32 @@
+<div class="container mt-4">
+  <h2 class="mb-3">Notification Management</h2>
+
+  <!-- Form -->
+  <form (ngSubmit)="addNotification()" #notificationForm="ngForm" class="mb-4">
+    <div class="form-group mb-2">
+      <input type="text" [(ngModel)]="newNotification.title" name="title" placeholder="Title"
+             class="form-control" required>
+    </div>
+    <div class="form-group mb-2">
+      <textarea [(ngModel)]="newNotification.description" name="description" placeholder="Description"
+                class="form-control" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Notification</button>
+  </form>
+
+  <!-- Table -->
+  <table class="table table-bordered table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let n of notifications">
+        <td>{{ n.title }}</td>
+        <td>{{ n.description }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
